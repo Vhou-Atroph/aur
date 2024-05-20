@@ -20,7 +20,7 @@ makedepends=(
 "python-wheel")
 checkdepends=()
 optdepends=(
-"xdg-utils")
+"xdg-utils: in-app settings opening support")
 provides=()
 conflicts=()
 replaces=()
