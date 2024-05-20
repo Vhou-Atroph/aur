@@ -28,17 +28,17 @@ backup=()
 options=()
 install=
 changelog=
-source=("https://github.com/Vhou-Atroph/$pkgname/archive/refs/tags/V$pkgver.tar.gz")
+source=("git+https://github.com/Vhou-Atroph/$pkgname.git#tag=V$pkgver")
 noextract=()
 sha256sums=("SKIP")
 validpgpkeys=()
 
 build() {
-	cd "$srcdir/TT-Damage-Calculator-$pkgver"
+	cd "$srcdir/$pkgname"
 	maturin build --release
 }
 
 package() {
-	cd "$srcdir/TT-Damage-Calculator-$pkgver"
+	cd "$srcdir/$pkgname"
 	python -m installer  --destdir="$pkgdir/" target/wheels/*.whl 
 }
